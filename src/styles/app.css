@@ -1,0 +1,148 @@
+:root {
+    --primary-color: #FFFFFF;
+    --secondary-color: #EB9110;
+    --light-gray: #ECECEC;
+    --medium-gray: #BDBDBD;
+    --secondary-color-alt: #FFB246;
+    --gutter-x: 10ch;
+    --padding-x: 1em;
+    --padding-y: 1em;
+}
+
+body {
+    background-color: var(--primary-color);
+}
+
+#root {
+    height: 100%;
+}
+
+header {
+    background-color: var(--secondary-color-alt);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: var(--padding-y) var(--gutter-x);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-content  h3 {
+    font-size: 1.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.header-content  h3.header-title::before {
+    content: url("../assets/images/logo.svg");
+}
+
+header #searchInput {
+    margin-left: auto;
+    height: 1.5rem;
+    padding: 1rem;
+    border-radius: 1.25rem;
+    border: none;
+}
+
+footer {
+    background-color: var(--secondary-color-alt);
+    padding: 1em 1em;
+}
+
+.container {
+    width: 100%;
+}
+
+.app-container {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    place-items: center;
+}
+
+.content {
+    padding: 1em var(--gutter-x);
+}
+
+.paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1em!important;
+}
+
+.paginator input[type="numeric"], button {
+    width: 2rem;
+    height: 2rem;
+    box-sizing: border-box;
+    border: none;
+}
+
+.paginator input[type="numeric"] {
+    border: 1px solid var(--light-gray);
+    margin-right: 0.5em;
+}
+
+.paginator button {
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.movie-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30ch, 1fr));
+    grid-gap: 1rem;
+}
+
+.movie-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background-color: var(--medium-gray);
+}
+
+.image-card img {
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+}
+
+.movie-card-info {
+    display: flex;
+    align-items: center;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.movie-card-info .movie-card-rating {
+    margin-left: auto;
+    background-color: var(--secondary-color-alt);
+    padding: 0.75em;
+    border-radius: 0.5em;
+}
+
+.movie-card-overview {
+    background-color: var(--medium-gray);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(101%);
+    overflow-y: auto;
+    transition: transform 0.3s ease-in;
+    padding: 2em;
+    border-radius:  0.5em;
+}
+
+.movie-card:hover .movie-card-overview {
+    transform: translateY(0);
+}
+
+.loader, .error {
+    text-align: center;
+}
+

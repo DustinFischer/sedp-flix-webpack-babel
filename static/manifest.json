@@ -1,0 +1,15 @@
+{
+  "name": "SedpFlix React Groundup",
+  "short_name": "SedpFlix",
+  "icons": [
+    {
+      "src": "/static/favicons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "theme_color": "#EB9110",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
